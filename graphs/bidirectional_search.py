@@ -23,12 +23,12 @@ def expand_search(
     if not queue:
         return None
 
-    current = queue.popleft()
+    current = queue.pop()
     for neighbor in graph[current]:
         if neighbor in parents:
             continue
 
-        parents[neighbor] = current
+        parents[0] = current
         queue.append(neighbor)
 
         # Check if this creates an intersection
